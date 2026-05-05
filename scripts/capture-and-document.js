@@ -8,8 +8,8 @@ const Handlebars = require('handlebars');
 // Список CSS-селекторов, которые считаем важными элементами интерфейса.
 // При необходимости добавьте сюда свои: 'table', 'img', 'nav a' и т.п.
 const SIGNIFICANT_SELECTORS = [
-  'button:visible', 'input:visible', 'a:visible', 'textarea:visible',
-  'select:visible', 'h1:visible', 'h2:visible', 'h3:visible'
+  'button', 'input', 'a', 'textarea',
+  'select', 'h1', 'h2', 'h3'
 ].join(',');
 
 (async () => {
