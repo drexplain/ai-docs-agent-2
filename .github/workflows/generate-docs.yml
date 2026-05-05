@@ -1,0 +1,35 @@
+name: AI Docs Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL страницы для документирования'
+        required: true
+        type: string
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Получить код
+        uses: actions/checkout@v4
+
+      - name: Установить Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Установить зависимости и браузер
+        run: |
+          npm install
+          npx playwright install chromium
+
+      - name: Запустить агента
+        run: node scripts/capture-and-document.js "${{ inputs.url }}"
+
+      - name: Сохранить результат
+        uses: actions/upload-artifact@v4
+        with:
+          name: user-documentation
+          path: output/
