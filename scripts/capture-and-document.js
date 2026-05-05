@@ -64,7 +64,7 @@ const SIGNIFICANT_SELECTORS = [
   const overlaySVG = `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       ${items.map((el, i) => {
-        const pad = 15;                         // отступ рамки от элемента
+        const pad = 7;                         // отступ рамки от элемента
         const rectX = el.x - pad;
         const rectY = el.y - pad;
         const rectW = el.width + 2 * pad;
