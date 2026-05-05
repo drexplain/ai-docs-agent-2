@@ -1,0 +1,14 @@
+{ 
+  "name": "ai-docs-agent", 
+  "version": "1.0.0", 
+  "description": "Захват аннотированных скриншотов и генерация пользовательской документации", 
+  "main": "scripts/capture-and-document.js", 
+  "scripts": { 
+    "start": "node scripts/capture-and-document.js" 
+  }, 
+  "dependencies": { 
+    "handlebars": "^4.7.8", 
+    "playwright": "^1.48.0", 
+    "sharp": "^0.33.2" 
+  } 
+}
